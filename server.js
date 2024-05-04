@@ -9,8 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Connect to SQLite database
-const dbPath = '/home/amchk/code/mjo/mjolnir_app.db';
-const db = new sqlite3.Database(dbPath);
+const db = new sqlite3.Database(path.join(__dirname, '..', 'db', 'database.db'));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
