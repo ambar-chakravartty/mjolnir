@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mjolnir Worthiness Test</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Mjolnir Worthiness Test</h1>
+  <form action="/submit" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <% questions.forEach((question, index) => { %>
+      <div>
+        <p><%= question.question %></p>
+        
+          <input type="radio" id="<%= question.option1 %>" name="question<%= index + 1 %>" value="<%= question.option1 %>">
+          <label for="<%= question.option1 %>"><%= question.option1 %></label><br>
+          <input type="radio" id="<%= question.option2 %>" name="question<%= index + 1 %>" value="<%= question.option2 %>">
+          <label for="<%= question.option2 %>"><%= question.option2 %></label><br>
+          <input type="radio" id="<%= question.option3 %>" name="question<%= index + 1 %>" value="<%= question.option3 %>">
+          <label for="<%= question.option3 %>"><%= question.option3 %></label><br>
+          <input type="radio" id="<%= question.option4 %>" name="question<%= index + 1 %>" value="<%= question.option4 %>">
+          <label for="<%= question.option4 %>"><%= question.option4 %></label><br>
+              </div>
+    <% }) %>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+
